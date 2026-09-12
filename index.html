@@ -7,7 +7,7 @@
 <meta name="description" content="UX audits and consulting for Swansea businesses. Practical, research-led reviews that help your website win more enquiries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#16233c;
@@ -31,7 +31,7 @@
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{
-    font-family:'Bricolage Grotesque',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     color:var(--navy);
     line-height:1.2;
     margin:0 0 .5em;
@@ -64,7 +64,7 @@
     padding-block:16px;
   }
   .brand{
-    font-family:'Bricolage Grotesque',sans-serif;
+    font-family:'Space Grotesk',sans-serif;
     font-weight:700;
     letter-spacing:-.01em;
     font-size:1.15rem;
@@ -124,7 +124,7 @@
     padding:30px 26px;display:flex;flex-direction:column;
   }
   .card .price{
-    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:1.5rem;color:var(--navy);
+    font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:1.5rem;color:var(--navy);
     margin:.2em 0 .1em;
   }
   .card .turnaround{font-size:.82rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1em;}
@@ -142,7 +142,7 @@
   .why{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
   .why blockquote{
     margin:0;padding:28px 30px;background:var(--gold-light);border-left:3px solid var(--gold);
-    border-radius:4px;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:1.15rem;color:var(--navy);line-height:1.5;
+    border-radius:4px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:1.15rem;color:var(--navy);line-height:1.5;
   }
   .why blockquote cite{display:block;margin-top:14px;font-family:'Inter',sans-serif;font-size:.82rem;color:var(--muted);font-style:normal;}
 
@@ -170,7 +170,7 @@
   .about .initials{
     width:96px;height:96px;border-radius:50%;background:var(--navy);
     color:#fff;display:flex;align-items:center;justify-content:center;
-    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:1.8rem;margin-bottom:20px;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:1.8rem;margin-bottom:20px;
   }
   .about .cred{
     display:flex;gap:14px;margin-top:24px;flex-wrap:wrap;
@@ -410,7 +410,7 @@
         <div class="form-status" id="cfStatus" role="status" aria-live="polite"></div>
       </form>
 
-      <div class="sub">Or email <a href="mailto:shipley.ux@gmail.com?subject=UX%20review%20enquiry" style="color:#fff;text-decoration:underline;">shipley.ux@gmail.com</a> directly &middot; usually replies within a couple of days</div>
+      <div class="sub">Or email <a href="mailto:shipley.ux@gmail.com?subject=UX%20review%20enquiry" style="color:#fff;text-decoration:underline;">shipley.ux@gmail.com</a> directly &middot; usually replies within 24 hours</div>
     </div>
   </div>
 </section>
@@ -452,7 +452,7 @@
     .then(function(res){ return res.json(); })
     .then(function(result){
       if (result.success) {
-        cfStatus.textContent = "Thanks, I've got your message and will reply within a couple of days.";
+        cfStatus.textContent = "Thanks, I've got your message and will reply within 24 hours.";
         cfStatus.className = 'form-status success';
         cf.reset();
       } else {
