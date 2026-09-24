@@ -2,7 +2,6 @@ packages:
   - name: assess
     functions:
       - name: draft
-        main: index.js
         runtime: 'nodejs:18'
         web: true
         limits:
