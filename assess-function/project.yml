@@ -4,5 +4,7 @@ packages:
       - name: draft
         runtime: 'nodejs:18'
         web: true
+        environment:
+          ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
         limits:
           timeout: 30000
