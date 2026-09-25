@@ -1,8 +1,8 @@
 /**
  * DigitalOcean Function: assess/draft
  * ------------------------------------
- * Lightweight (no headless browser) version of the Quick-Win Snapshot
- * drafter. Fetches a page's raw HTML, pulls out its structure with regex
+ * Lightweight (no headless browser) version of the Website Quick-Fix
+ * Review drafter. Fetches a page's raw HTML, pulls out its structure with regex
  * (title, headings, CTAs, forms, word count - no screenshots), and asks
  * Claude to draft 5 prioritised UX fixes.
  *
@@ -118,9 +118,9 @@ function extractStructure(html) {
 }
 
 function buildPrompt(url, structure) {
-  return `You are drafting a "Quick-Win Snapshot" for a UX consultant, Sara Shipley (shipleyux.com), who reviews and edits every draft before it goes to the client. Your output is an internal working draft, not a finished deliverable - write it as if Sara will tighten it, not as final client-ready copy.
+  return `You are drafting a "Website Quick-Fix Review" for a UX consultant, Sara Shipley (shipleyux.com), who reviews and edits every draft before it goes to the client. Your output is an internal working draft, not a finished deliverable - write it as if Sara will tighten it, not as final client-ready copy.
 
-Format (Sara's standard Quick-Win Snapshot deliverable):
+Format (Sara's standard Website Quick-Fix Review deliverable):
 - Scope: ONE page - here, the page at ${url}
 - Exactly 5 concrete, prioritised fixes, ranked by impact vs effort (most important first)
 - Each fix: a one-line problem statement, then a one-line concrete recommendation
