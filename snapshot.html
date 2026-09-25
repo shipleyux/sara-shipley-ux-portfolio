@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quick-Win Snapshot · Sara Shipley UX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Submit your website for a Quick-Win Snapshot — a focused, prioritised review of the fixes that will make the biggest difference.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16233c;
+    --navy-2:#233657;
+    --ink:#242b36;
+    --paper:#ffffff;
+    --panel:#f6f7f9;
+    --line:#e6e8ec;
+    --gold:#a87a2e;
+    --gold-light:#f4ead9;
+    --muted:#5c6470;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{
+    font-family:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--navy);
+    line-height:1.2;
+    margin:0 0 .4em;
+    font-weight:700;
+    letter-spacing:-.01em;
+  }
+  p{margin:0 0 1em;color:var(--muted);}
+  a{color:var(--navy);}
+  .wrap{max-width:640px;margin:0 auto;padding:64px 24px 96px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.75rem;
+    font-weight:600;
+    color:var(--gold);
+    margin-bottom:.75em;
+    display:block;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:32px;
+    margin-top:32px;
+  }
+  label{
+    display:block;
+    font-weight:600;
+    color:var(--navy);
+    font-size:.9rem;
+    margin:0 0 6px;
+  }
+  .field{margin-bottom:20px;}
+  input, select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-size:1rem;
+    font-family:inherit;
+    background:#fff;
+    color:var(--ink);
+  }
+  input:focus, select:focus{
+    outline:2px solid var(--gold);
+    outline-offset:1px;
+    border-color:var(--gold);
+  }
+  button{
+    width:100%;
+    background:var(--navy);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:14px 20px;
+    font-size:1rem;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    margin-top:8px;
+  }
+  button:hover{background:var(--navy-2);}
+  button:disabled{opacity:.6;cursor:default;}
+  #status{
+    min-height:1.4em;
+    margin-top:16px;
+    font-size:.95rem;
+  }
+  #status.error{color:#a33;}
+  #status.success{color:#2e7d4f;font-weight:600;}
+  .back{display:inline-block;margin-bottom:24px;font-size:.9rem;color:var(--muted);text-decoration:none;}
+  .back:hover{color:var(--navy);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/">&larr; Back to shipleyux.com</a>
+    <span class="eyebrow">Quick-Win Snapshot</span>
+    <h1>Get your Quick-Win Snapshot</h1>
+    <p>Tell me a bit about you and your site below. I'll review it and send your prioritised, plain-English report to the email you provide.</p>
+
+    <div class="card">
+      <form id="snapshotForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="url">Website address</label>
+          <input type="url" id="url" name="url" placeholder="yourwebsite.com" required>
+        </div>
+        <div class="field">
+          <label for="tier">Which snapshot?</label>
+          <select id="tier" name="tier">
+            <option value="Standard (24hr)">Standard — 24hr turnaround</option>
+            <option value="Express (2hr)">Express — 2hr turnaround</option>
+          </select>
+        </div>
+        <button id="submitBtn" type="submit">Submit for review</button>
+        <div id="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const ENDPOINT = "https://shipleyux.com/sara-shipley-ux-portfolio-assess/assess/submit";
+
+    const form = document.getElementById("snapshotForm");
+    const statusEl = document.getElementById("status");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Submitting...";
+      statusEl.className = "";
+      submitBtn.disabled = true;
+
+      const payload = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        url: document.getElementById("url").value,
+        tier: document.getElementById("tier").value,
+      };
+
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok || data.error) {
+          throw new Error(data.error || `Something went wrong (${res.status})`);
+        }
+        form.style.display = "none";
+        statusEl.textContent = "Thanks — your request is in. You'll hear back within the turnaround time you selected.";
+        statusEl.className = "success";
+      } catch (err) {
+        statusEl.textContent = "Error: " + err.message;
+        statusEl.className = "error";
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
