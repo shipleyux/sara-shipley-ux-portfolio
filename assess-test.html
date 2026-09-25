@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quick-Win Assessment — Internal Test</title>
+<meta name="robots" content="noindex, nofollow" />
+<style>
+  :root { --navy:#12233b; --gold:#c9a24b; --muted:#5b6572; --panel:#f6f4ef; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; max-width: 720px; margin: 60px auto; padding: 0 24px; color: var(--navy); }
+  h1 { font-size: 1.5rem; margin-bottom: .2em; }
+  p.note { color: var(--muted); margin-top: 0; }
+  form { display: flex; gap: 10px; margin: 28px 0; }
+  input[type=url] { flex: 1; padding: 12px 14px; border: 1px solid #d7d2c6; border-radius: 6px; font-size: 1rem; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 6px; padding: 12px 20px; font-size: 1rem; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: default; }
+  #status { color: var(--muted); min-height: 1.2em; margin-bottom: 16px; }
+  #result { white-space: pre-wrap; background: var(--panel); border: 1px solid #e5e1d6; border-radius: 8px; padding: 24px; line-height: 1.6; }
+  #structure { margin-top: 20px; }
+  #structure summary { cursor: pointer; color: var(--muted); }
+  #structure pre { background: #fff; border: 1px solid #e5e1d6; border-radius: 6px; padding: 14px; overflow-x: auto; font-size: .85rem; }
+  .error { color: #a33; }
+</style>
+</head>
+<body>
+  <h1>Quick-Win Assessment — internal test page</h1>
+  <p class="note">Not linked anywhere on the site. Paste a URL, get a draft 5-point assessment. Text/structure only — no screenshots in this version.</p>
+
+  <form id="f">
+    <input type="url" id="url" placeholder="https://example.com" required />
+    <button id="submitBtn" type="submit">Assess</button>
+  </form>
+
+  <div id="status"></div>
+  <div id="result"></div>
+  <details id="structure" style="display:none;">
+    <summary>Raw page structure the AI saw</summary>
+    <pre id="structureJson"></pre>
+  </details>
+
+  <script>
+    const ENDPOINT = "https://shipleyux.com/sara-shipley-ux-portfolio-assess/assess/draft";
+
+    const form = document.getElementById("f");
+    const statusEl = document.getElementById("status");
+    const resultEl = document.getElementById("result");
+    const structureDetails = document.getElementById("structure");
+    const structureJson = document.getElementById("structureJson");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const url = document.getElementById("url").value;
+      statusEl.textContent = "Fetching the page and asking Claude to draft an assessment... (10-20s)";
+      statusEl.classList.remove("error");
+      resultEl.textContent = "";
+      structureDetails.style.display = "none";
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url }),
+        });
+        const data = await res.json();
+        if (!res.ok || data.error) {
+          throw new Error(data.error || `Request failed (${res.status})`);
+        }
+        statusEl.textContent = `Done. ${data.usage ? `(${data.usage.input_tokens + data.usage.output_tokens} tokens used)` : ""}`;
+        resultEl.textContent = data.draftText;
+        structureJson.textContent = JSON.stringify(data.structure, null, 2);
+        structureDetails.style.display = "block";
+      } catch (err) {
+        statusEl.textContent = "Error: " + err.message;
+        statusEl.classList.add("error");
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
