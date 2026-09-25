@@ -7,7 +7,7 @@
  *   1. Runs the same lightweight draft-assessment logic as assess/draft
  *      (fetch HTML, extract structure, ask Claude for 5 prioritised fixes).
  *   2. Emails the client's details + the AI draft to Sara (never to the
- *      client) via Resend, so she can review, check the site herself, amend,
+ *      client) via Brevo, so she can review, check the site herself, amend,
  *      and send the finished report on through her own process.
  *
  * Expects a POST with JSON body: { name, email, url, tier }
@@ -169,9 +169,9 @@ function escapeHtml(s) {
 }
 
 async function sendNotificationEmail({ name, email, tier, url, draftText, draftError }) {
-  const resendKey = process.env.RESEND_API_KEY;
-  if (!resendKey) {
-    throw new Error("RESEND_API_KEY is not set on this function.");
+  const brevoKey = process.env.BREVO_API_KEY;
+  if (!brevoKey) {
+    throw new Error("BREVO_API_KEY is not set on this function.");
   }
 
   const subject = `New Quick-Win Snapshot request: ${name} (${url})`;
@@ -192,24 +192,25 @@ async function sendNotificationEmail({ name, email, tier, url, draftText, draftE
     }
   `;
 
-  const res = await fetch("https://api.resend.com/emails", {
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      authorization: `Bearer ${resendKey}`,
+      accept: "application/json",
+      "api-key": brevoKey,
     },
     body: JSON.stringify({
-      from: NOTIFY_FROM,
-      to: [NOTIFY_TO],
-      reply_to: email,
+      sender: { email: NOTIFY_FROM, name: "Quick-Win Snapshot" },
+      to: [{ email: NOTIFY_TO }],
+      replyTo: { email },
       subject,
-      html: bodyHtml,
+      htmlContent: bodyHtml,
     }),
   });
 
   if (!res.ok) {
     const data = await res.json().catch(() => ({}));
-    throw new Error(data?.message || `Resend API returned ${res.status}`);
+    throw new Error(data?.message || `Brevo API returned ${res.status}`);
   }
 }
 
