@@ -8,3 +8,13 @@ packages:
           ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
         limits:
           timeout: 30000
+      - name: submit
+        runtime: 'nodejs:18'
+        web: true
+        environment:
+          ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+          RESEND_API_KEY: ${RESEND_API_KEY}
+          NOTIFY_EMAIL: ${NOTIFY_EMAIL}
+          NOTIFY_FROM_EMAIL: ${NOTIFY_FROM_EMAIL}
+        limits:
+          timeout: 30000
