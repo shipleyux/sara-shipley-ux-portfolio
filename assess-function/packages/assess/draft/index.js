@@ -148,7 +148,8 @@ async function draftAssessment(url, structure) {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 1200,
+      max_tokens: 2000,
+      thinking: { type: "disabled" },
       messages: [{ role: "user", content: buildPrompt(url, structure) }],
     }),
   });
