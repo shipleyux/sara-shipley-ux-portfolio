@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Quick-Win Snapshot · Sara Shipley UX</title>
+<title>Website Quick-Fix Review · Sara Shipley UX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Submit your website for a Quick-Win Snapshot — a focused, prioritised review of the fixes that will make the biggest difference.">
+<meta name="description" content="Submit your website for a Website Quick-Fix Review: a focused, prioritised review of the fixes that will make the biggest difference.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
@@ -108,8 +108,8 @@
 <body>
   <div class="wrap">
     <a class="back" href="/">&larr; Back to shipleyux.com</a>
-    <span class="eyebrow">Quick-Win Snapshot</span>
-    <h1>Get your Quick-Win Snapshot</h1>
+    <span class="eyebrow">Website Quick-Fix Review</span>
+    <h1>Get your Website Quick-Fix Review</h1>
     <p>Tell me a bit about you and your site below. I'll review it and send your prioritised, plain-English report to the email you provide.</p>
 
     <div class="card">
@@ -129,8 +129,8 @@
         <div class="field">
           <label for="tier">Which snapshot?</label>
           <select id="tier" name="tier">
-            <option value="Standard (24hr)">Standard — 24hr turnaround</option>
-            <option value="Express (2hr)">Express — 2hr turnaround</option>
+            <option value="Standard (24hr)">Standard (24hr turnaround)</option>
+            <option value="Express (2hr)">Express (2hr turnaround)</option>
           </select>
         </div>
         <button id="submitBtn" type="submit">Submit for review</button>
@@ -170,7 +170,7 @@
           throw new Error(data.error || `Something went wrong (${res.status})`);
         }
         form.style.display = "none";
-        statusEl.textContent = "Thanks — your request is in. You'll hear back within the turnaround time you selected.";
+        statusEl.textContent = "Thanks! Your request is in. You'll hear back within the turnaround time you selected.";
         statusEl.className = "success";
       } catch (err) {
         statusEl.textContent = "Error: " + err.message;
