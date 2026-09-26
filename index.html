@@ -165,6 +165,39 @@
   .cs-findings h3{font-size:1rem;margin-bottom:.8em;}
   .cs-findings ul{margin:0;padding-left:1.2em;color:var(--muted);font-size:.95rem;}
   .cs-findings li{margin-bottom:.5em;}
+  .cs-narrative{margin-top:40px;}
+  .cs-narrative h3{font-size:1.15rem;margin-bottom:.5em;}
+  .cs-narrative p{color:var(--muted);font-size:.97rem;max-width:74ch;}
+  .cs-narrative + .cs-narrative{margin-top:36px;}
+  .cs-placeholder{margin:24px 0;}
+  .cs-placeholder .ph-box{
+    background:var(--panel);border:1px dashed var(--line);border-radius:6px;
+    min-height:200px;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:.85rem;font-weight:500;text-align:center;padding:20px;
+  }
+  .cs-placeholder.full .ph-box{min-height:300px;}
+  .cs-placeholder figcaption{margin-top:10px;font-size:.85rem;color:var(--muted);font-weight:500;}
+  .cs-callouts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:20px 0 0;}
+  .cs-callouts div{border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .cs-callouts strong{display:block;color:var(--navy);font-size:.92rem;margin-bottom:4px;}
+  .cs-callouts p{margin:0;font-size:.87rem;color:var(--muted);}
+  .cs-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:20px 0 0;}
+  .cs-flow .step{flex:1;min-width:150px;background:var(--panel);border-radius:6px;padding:16px 14px;}
+  .cs-flow .step strong{display:block;color:var(--navy);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px;}
+  .cs-flow .step p{margin:0;font-size:.85rem;color:var(--muted);}
+  .cs-flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;flex:0 0 24px;}
+  .cs-pending{
+    background:var(--gold-light);border:1px solid var(--gold);border-radius:6px;
+    padding:18px 20px;margin-top:20px;font-size:.9rem;color:var(--navy-2);
+  }
+  .cs-meta{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap;}
+  .cs-meta div{border:1px solid var(--line);border-radius:6px;padding:14px 16px;font-size:.85rem;color:var(--muted);flex:1;min-width:190px;}
+  .cs-meta strong{display:block;color:var(--navy);font-size:.9rem;margin-bottom:2px;}
+  @media (max-width:820px){
+    .cs-callouts{grid-template-columns:1fr;}
+    .cs-flow{flex-direction:column;}
+    .cs-flow .arrow{transform:rotate(90deg);}
+  }
 
   /* ABOUT */
   .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;}
@@ -391,36 +424,134 @@
     <span class="cs-tag">Case Study</span>
     <span class="cs-tag" style="border-color:var(--gold);color:var(--gold);margin-left:8px;">&#9679; App submitted to App Store</span>
     <div class="section-head" style="margin-bottom:0;">
-      <h2>Sober Points: building trust into an alcohol-free venue directory</h2>
-      <p>Product design and UX for an app that helps people find bars, restaurants and cafes that are genuinely welcoming to non-drinkers, with a directory built to feel trustworthy rather than scraped.</p>
+      <h2>Sober Points: designing a better way to find sober-friendly places</h2>
+      <p>Product design &middot; UX research &middot; Interaction design &middot; Prototyping &middot; Usability testing &middot; Product analytics</p>
     </div>
 
-    <div class="cs-body">
-      <div class="cs-block">
-        <h3>The brief</h3>
-        <p>Sober Points needed to solve a trust problem, not just a data problem: an alcohol-free venue directory is only useful if people believe what's listed. The venues aren't dedicated alcohol-free bars, they're everyday venues, bars, restaurants, cafes, shops, that happen to be welcoming to non-drinkers and offer good alcohol-free options. That made accuracy and credibility the core design challenge.</p>
-      </div>
-      <div class="cs-block">
-        <h3>The approach</h3>
-        <p>Rather than commission formal research, I looked closely at how the main competitor, ChillMaps, built its directory: largely automated, scanning venue websites and matching against a database of alcohol-free brands. That approach scales fast but has an obvious weakness: automated matching can list a venue that technically stocks a product but doesn't actually feel welcoming, or misses ones that do. I made the call to trade some scale for trust.</p>
-      </div>
-      <div class="cs-block">
-        <h3>The design decisions</h3>
-        <p>Every venue is manually vetted before it appears on the map. Nothing goes live without human approval, and each listing carries a visible "Sober Points approved" badge, so the trust signal is legible at a glance rather than buried in copy. The content model went through a few iterations: an early blog section was cut once it became clear it didn't serve the core task of finding a venue. The app now works like a HappyCow-style directory with light reviews, with a longer-term path toward a more TripAdvisor or Reddit-style community model as the user base grows. Sign-up is deliberately staged by trust level: anyone can browse the map with no account at all, but saving venues, leaving reviews or building a profile requires signing up, email and password sign-ups must verify their email before those features unlock, while Apple and Google sign-in skip that step, since those providers already establish identity.</p>
-      </div>
-      <div class="cs-block">
-        <h3>The outcome</h3>
-        <p>The app is built and functional, backed by around 700 vetted venues, and is currently being submitted to the App Store for the first time.</p>
+    <div class="cs-narrative">
+      <p>Sober Points is a discovery platform designed to help people find places where choosing not to drink doesn't mean compromising on the experience. I founded Sober Points after recognising a gap in traditional venue discovery: a restaurant, pub or bar might technically offer an alcohol-free option, but that doesn't necessarily make it a good experience for someone who isn't drinking. I led the product and UX design from early research and concept development through to the live web platform and native app.</p>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>The problem</h3>
+      <p>Finding somewhere to eat or socialise is easy. Finding somewhere that's genuinely good when you're not drinking is harder. Information about alcohol-free options is often incomplete, buried within menus or unavailable until you arrive. Existing discovery platforms weren't designed around this need.</p>
+      <p>The initial question was: <strong style="color:var(--navy);">how might we make it easier for people to discover places where they can have a genuinely good experience without alcohol?</strong> But I deliberately didn't jump straight to a venue-finding app. Early Sober Points concepts explored a much broader ecosystem around sober living, including communities, podcasts, events, products and places.</p>
+      <figure class="cs-placeholder">
+        <div class="ph-box">Image to come: early concept/prototype board</div>
+        <figcaption>Early concept exploration and usability testing. Initial prototypes explored several aspects of sober discovery before the proposition was narrowed.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Starting with users</h3>
+      <p>I carried out user research to understand how people currently discovered sober-friendly experiences, what information they needed and where existing services fell short. Rather than testing a predetermined solution, I used early concepts to explore which parts of the proposition were most useful and how people expected the service to work. Research informed both the content of the service and its structure, and helped me progressively narrow what was initially a very broad proposition.</p>
+      <div class="cs-pending">Research findings to follow: this section will carry the strongest 2&ndash;3 things the research surfaced, each with the observation behind it and what it changed in the design.</div>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Exploring the proposition</h3>
+      <p>Early wireframes explored several potential areas of the service, including sober communities, curated content, podcasts, products, events and a location-based map. The map was present from an early stage, allowing users to enter a location and explore sober-friendly options nearby.</p>
+      <figure class="cs-placeholder">
+        <div class="ph-box">Image to come: community screen, Sober Map &amp; broader discovery screen (low-fi)</div>
+        <figcaption>Early low-fidelity concepts exploring content, community and location-based discovery.</figcaption>
+      </figure>
+      <p>These weren't intended as polished interfaces. They gave me a quick way to test the structure and value of different parts of the proposition before investing in detailed design and development.</p>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Mapping the wider experience</h3>
+      <p>As the concept developed, I mapped the wider service rather than designing individual screens in isolation.</p>
+      <figure class="cs-placeholder full">
+        <div class="ph-box">Image to come: full-width sitemap / service map</div>
+        <figcaption>Mapping the service across discovery, venue information, contribution, content and supporting touchpoints.</figcaption>
+      </figure>
+      <p>The architecture covered the homepage, Sober Map, contribution journeys, content, contact and supporting communications. This helped me think beyond individual screens and consider how someone might move from discovering Sober Points to finding somewhere suitable, and how the community could contribute information back into the platform.</p>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Making venue discovery the core experience</h3>
+      <p>Through research, prototyping and iteration, Sober Points evolved from the broader content and community concept into a much more focused proposition: <strong style="color:var(--navy);">help me find somewhere good to go when I'm not drinking.</strong></p>
+      <p>Venue discovery became the core of the experience, which meant designing around a different set of questions: what's near me? Is it suitable for the kind of place I'm looking for? What alcohol-free options does it actually have? Can I trust the information? The product therefore needed to do more than put pins on a map.</p>
+      <figure class="cs-placeholder">
+        <div class="ph-box">Image to come: current map screen</div>
+        <figcaption>The live Sober Points discovery experience.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Designing for quick decisions</h3>
+      <p>I designed the map and venue experience to progressively reveal information rather than making users investigate every venue individually. Users can search by location, move between map and venue results, apply filters and open individual venue profiles for more detail. Venue information can include imagery, alcohol-free options, attributes and community reviews, giving people more context before deciding where to go.</p>
+      <figure class="cs-placeholder">
+        <div class="ph-box">Image to come: map/list view + venue profile</div>
+      </figure>
+      <div class="cs-callouts">
+        <div><strong>Search by location</strong><p>Find options around a destination.</p></div>
+        <div><strong>Filter the results</strong><p>Reduce the number of unsuitable venues before opening individual profiles.</p></div>
+        <div><strong>Understand the AF offering</strong><p>Surface information relevant to someone choosing not to drink.</p></div>
       </div>
     </div>
 
-    <div class="cs-findings">
-      <h3>Key product decisions</h3>
-      <ul>
-        <li>Chose manual human vetting over automated scraping, trading some scale for trust in a category where credibility is the whole product.</li>
-        <li>Removed an early blog section once it was clear it didn't support the core task of finding a venue.</li>
-        <li>Staged account requirements by sign-in method: social sign-in skips email verification since identity is already established, while email sign-up requires it before unlocking contribution features.</li>
-      </ul>
+    <div class="cs-narrative">
+      <h3>Designing a two-sided service</h3>
+      <p>One of the challenges was that Sober Points wasn't simply a consumer interface: the usefulness of the product depends on the quality of the venue information behind it. I therefore designed contribution and moderation journeys alongside the discovery experience, allowing information to be added and updated while maintaining control over what appeared publicly. Venue owners can also claim their listings, creating a route towards more accurate, owner-verified information.</p>
+      <figure class="cs-placeholder">
+        <div class="ph-box">Image to come: add / update / claim venue screen</div>
+      </figure>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Shipping, measuring and learning</h3>
+      <p>Launching the product wasn't the end of the design process. I instrumented the live experience with product analytics so I could understand how people were actually using Sober Points rather than relying solely on what people said during research, tracking behaviour across discovery, search, venue interactions and engagement with key functionality. Because this is commercially sensitive product data, I don't publish the underlying figures, but behavioural patterns help me identify where users are engaging, where journeys may be creating friction and what to investigate next.</p>
+      <div class="cs-flow">
+        <div class="step"><strong>Discover</strong><p>How people enter and explore the service.</p></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><strong>Interact</strong><p>Which venue information and functionality they engage with.</p></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><strong>Identify friction</strong><p>Where behaviour suggests a journey needs investigation.</p></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><strong>Iterate</strong><p>Use behavioural evidence alongside qualitative research to prioritise improvements.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Iterating after launch</h3>
+      <p>Real usage has continued to expose design problems that weren't obvious in the original interface. For example, venue types and venue attributes don't always belong at the same level: a restaurant, pub or shop describes what a place is, while something such as alcohol-free beer on draught describes what it offers. As the dataset and functionality grew, treating both as equivalent filters risked creating a confusing information hierarchy.</p>
+      <div class="cs-grid">
+        <figure class="cs-placeholder">
+          <div class="ph-box">Image to come: original filter design</div>
+          <figcaption>The problem: category and attribute filters were visually competing at the same level.</figcaption>
+        </figure>
+        <figure class="cs-placeholder">
+          <div class="ph-box">Image to come: current filter design</div>
+          <figcaption>The iteration: venue type separated from more specific attributes, with the active state made explicit within the results.</figcaption>
+        </figure>
+      </div>
+      <p>This is a relatively small interface change, but it illustrates an important part of my approach: the information architecture has to evolve as the product and its data become more complex.</p>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>From web product to native app</h3>
+      <p>As Sober Points developed, I also translated the experience into a native mobile application. This wasn't simply a visual port of the website: mobile introduced different interaction considerations around map behaviour, navigation, authentication, saved venues and returning to the app through deep links.</p>
+      <figure class="cs-placeholder full">
+        <div class="ph-box">Image to come: three current app screens</div>
+      </figure>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>The outcome</h3>
+      <p>Sober Points progressed from exploratory wireframes and user research into a live product containing hundreds of sober-friendly venues, with real users searching, discovering and interacting with venue information. More importantly for me as a designer, it created an ongoing feedback loop: research &rarr; design &rarr; build &rarr; measure &rarr; learn &rarr; iterate. Building my own product has meant working beyond the boundaries of a conventional design handoff. I've had to make decisions about user needs, technical constraints, data quality, moderation, analytics and commercial viability, and then see how those decisions perform with real users.</p>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>What I learned</h3>
+      <p>The biggest lesson has been that good product design doesn't end when an interface is shipped. Some of the most useful design questions have appeared after launch, once the service contained more venues, more data and more functionality than the original prototypes ever had to accommodate. Sober Points continues to evolve, but the principle behind it has remained remarkably simple: make it easier to find somewhere you'll genuinely enjoy going, whether you're drinking alcohol or not.</p>
+    </div>
+
+    <div class="cs-meta">
+      <div><strong>Role</strong>Founder &amp; Product/UX Designer</div>
+      <div><strong>Responsibilities</strong>User research &middot; IA &middot; Interaction design &middot; Wireframing &middot; Prototyping &middot; Usability testing &middot; UI design &middot; Product analytics &middot; Iteration</div>
+      <div><strong>Platforms</strong>Responsive web application &middot; iOS/React Native app</div>
+      <div><strong>Status</strong>Live product, continuously iterated</div>
     </div>
   </div>
 </section>
