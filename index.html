@@ -175,6 +175,11 @@
   .about .photo{
     width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:20px;display:block;
   }
+  .hero-byline{display:flex;align-items:center;gap:12px;margin-bottom:.9em;}
+  .hero-byline img{
+    width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  }
+  .hero-byline .eyebrow{margin-bottom:0;}
   .about .cred{
     display:flex;gap:14px;margin-top:24px;flex-wrap:wrap;
   }
@@ -258,7 +263,10 @@
 <div id="top"></div>
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">UX Design &amp; Consulting &middot; Swansea</span>
+    <div class="hero-byline">
+      <img src="images/sara-shipley.jpg" alt="Sara Shipley">
+      <span class="eyebrow">UX Design &amp; Consulting &middot; Swansea</span>
+    </div>
     <h1>Websites that make it easy for clients to trust you and get in touch.</h1>
     <p class="lede">I help businesses find the friction points quietly costing them enquiries, and fix them with a focused review rather than a full rebuild.</p>
     <p style="font-size:.92rem;color:var(--muted);margin-top:-.6em;"><a href="#case-study" style="color:var(--navy-2);font-weight:600;">See how this approach reshaped Swansea Women's Aid's site &rarr;</a> now live at swanseawomensaid.com</p>
