@@ -131,13 +131,8 @@
   .card .turnaround{font-size:.82rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1em;}
   .card h3{font-size:1.15rem;margin-bottom:.3em;}
   .card p{color:var(--muted);font-size:.95rem;flex-grow:1;}
-  .card.featured{border-color:var(--gold);box-shadow:0 4px 24px rgba(168,122,46,.08);position:relative;}
-  .card.featured::before{
-    content:"Most popular first step";
-    position:absolute;top:-12px;left:26px;
-    background:var(--gold);color:#fff;font-size:.7rem;font-weight:700;
-    padding:4px 10px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase;
-  }
+  .card.featured{border-color:var(--gold);box-shadow:0 4px 24px rgba(168,122,46,.08);}
+  .featured-note{color:var(--gold);font-size:.85rem;font-weight:600;margin:-.4em 0 1em;}
 
   /* WHY IT MATTERS */
   .why{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
@@ -148,10 +143,9 @@
   .why blockquote cite{display:block;margin-top:14px;font-family:'Inter',sans-serif;font-size:.82rem;color:var(--muted);font-style:normal;}
 
   /* CASE STUDY */
-  .cs-tag{
-    display:inline-block;font-size:.78rem;font-weight:600;color:var(--navy-2);
-    background:var(--panel);border:1px solid var(--line);padding:5px 12px;border-radius:20px;margin-bottom:18px;
-  }
+  .cs-tag-row{font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:18px;}
+  .cs-tag-row .dot{color:var(--gold);}
+  .cs-tag-row .sep{margin:0 .5em;color:var(--line);}
   .cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:36px 0;}
   .cs-grid figure{margin:0;}
   .cs-grid img{border-radius:6px;border:1px solid var(--line);}
@@ -303,6 +297,7 @@
       <a href="#services" class="btn">See how it works</a>
       <a href="#contact" class="btn ghost">Get in touch</a>
     </div>
+  </div>
 </section>
 
 <section class="alt" id="services">
@@ -326,6 +321,7 @@
       <div class="card featured">
         <div class="turnaround">1 week</div>
         <h3>Full UX Audit</h3>
+        <p class="featured-note">Most people start here</p>
         <div class="price">From &pound;450</div>
         <p>A structured review of your whole site: navigation, content clarity, mobile experience, accessibility basics, and how easily a visitor turns into an enquiry. Delivered as a written report plus a 30-minute walkthrough call.</p>
         <p style="margin-top:1.2em;"><a href="#discovery-call" style="color:var(--gold);font-weight:600;">Learn more &rarr;</a></p>
@@ -369,8 +365,7 @@
 
 <section class="alt" id="case-study">
   <div class="wrap">
-    <span class="cs-tag">Case Study</span>
-    <span class="cs-tag" style="border-color:var(--gold);color:var(--gold);margin-left:8px;">&#9679; Live site</span>
+    <p class="cs-tag-row">Case study<span class="sep">&middot;</span><span class="dot">&#9679;</span> Live site</p>
     <div class="section-head" style="margin-bottom:0;">
       <h2>Swansea Women's Aid: a research-led redesign</h2>
       <p>A full website redesign for a local domestic abuse charity, built around three different audiences with very different needs, and very different amounts of time to find what they're looking for.</p>
@@ -418,14 +413,14 @@
     </div>
 
     <div class="cs-narrative" style="margin-top:56px;padding-top:40px;border-top:1px solid var(--line);">
-      <span class="cs-tag" style="border-color:var(--gold);color:var(--gold);">&#9679; Updated September 2026</span>
+      <p class="cs-tag-row"><span class="dot">&#9679;</span> Updated September 2026</p>
       <h3>Continued iteration: a full UX review and refresh</h3>
-      <p>The original site had been rebuilt in a hurry after the charity lost content when it was accidentally deleted, so some areas were never quite finished. Once I took over development directly, I was able to go back through the whole site, fix what hadn't been properly rebuilt, and make improvements far more quickly than the original project allowed for. I kept the existing SWA branding and tone throughout, but tightened the design, made the interface consistent page to page, reorganised several user journeys, improved the mobile experience, worked through a round of accessibility fixes, and made the CMS easier for staff to manage day to day.</p>
+      <p>The original site had been rebuilt in a hurry after the charity lost content to an accidental deletion, so parts of it were never quite finished. Once I took over development directly, I went back through the whole site: fixing what hadn't been properly rebuilt, tightening the design, reorganising key journeys, and working through a full accessibility pass, all while keeping the charity's existing branding and tone.</p>
     </div>
 
     <div class="cs-narrative">
       <h3>Safety comes first</h3>
-      <p>Safety features only work if they're genuinely usable under pressure. The exit button now stays visible at the top of the screen as the page scrolls, responds to the Esc key, and can't be undone with the browser's Back button. The helpline number is tappable to call directly on a phone. The Get help page leads with two unambiguous actions rather than a paragraph to read through first.</p>
+      <p>Safety features only work if they're genuinely usable under pressure. The exit button now stays visible at the top of the screen as the page scrolls, responds to the Esc key, and can't be undone with the browser's Back button. The helpline number is tappable to call directly on a phone, and the Get help page leads with two unambiguous actions rather than a paragraph to read through first.</p>
       <figure class="cs-placeholder full">
         <img src="images/swa-safety-buttons.png" alt="The Swansea Women's Aid Get help page, showing a persistent exit-site bar with a tap-to-call helpline number, and two clear buttons: Call 999 and Call our 24-hour helpline." style="width:100%;border-radius:6px;border:1px solid var(--line);">
         <figcaption>The Get help page now leads with two clear actions, alongside a persistent, keyboard-accessible exit route.</figcaption>
@@ -433,37 +428,23 @@
     </div>
 
     <div class="cs-narrative">
-      <h3>Making things easier to find</h3>
-      <p>The main menu now opens with Get help, ahead of the organisation's own priorities, followed by About domestic abuse, Our services, Get involved, Who we are and News. Services are shown as cards in plain English rather than internal project names, for example "Children and young people" rather than expecting a visitor to already know what CHYPS stands for. Complaints now have their own page, linked from the footer and the Get help page. Volunteer roles and job vacancies are shown as individual cards rather than buried in copy, each with a clear way to act on it.</p>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>A consistent look, and a faster mobile experience</h3>
-      <p>I brought the font, headings, spacing, buttons and cards in line with each other across the whole site, rather than each page following its own rules. Page headers and images were resized and rebalanced so they don't overpower the content beneath them, and I tidied up the footer. I also compressed every photo on the site, so pages now load noticeably faster, particularly on phones, where most visitors land first.</p>
+      <h3>A consistent, accessible experience</h3>
+      <p>The main menu now opens with Get help, followed by plain-English service names, like "Children and young people" rather than the internal acronym CHYPS, each with its own page for volunteering, vacancies and complaints. I also brought the font, spacing, buttons and cards in line across the whole site, and compressed every photo so pages load noticeably faster on mobile, where most visitors land first.</p>
       <figure class="cs-placeholder full">
         <img src="images/swa-homepage-devices.png" alt="The Swansea Women's Aid homepage shown on both a laptop and a phone, with the persistent safety bar, consistent card-based design and the reorganised menu visible on both." style="width:100%;border-radius:6px;border:1px solid var(--line);">
         <figcaption>The refreshed homepage, built to the same design system on desktop and mobile.</figcaption>
       </figure>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>A full accessibility pass</h3>
-      <p>I checked the site against WCAG 2.2 AA and worked through it systematically: colour contrast corrected across text, buttons and links; heading structure fixed so the page makes sense read out of order by a screen reader; every interactive element reachable and operable by keyboard alone, with visible focus outlines restored throughout; buttons and links resized so they're easier to hit accurately on a touchscreen; meaningful screen reader labels added to icons, images and controls that previously had none; and every form field given a clear, properly associated label. The language menu is back too, with Welsh and the most commonly spoken community languages sitting alongside English, so more visitors can use the site in a language they're comfortable with.</p>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Forms and the CMS</h3>
-      <p>Behind the scenes, the CMS now has clearer section names and proper fields for things like job vacancies and volunteer roles, rather than staff having to work around a structure built for something else. The Get involved enquiry form now saves every submission in the CMS and emails the team directly, rather than silently failing the way it had been.</p>
+      <p>I also worked through a full WCAG 2.2 AA pass &mdash; contrast, heading structure, keyboard access, focus outlines, touch target sizing and screen reader labels &mdash; and brought back a language menu covering Welsh and the most commonly spoken community languages. Behind the scenes, the CMS now has clearer fields for staff, and the Get involved form saves to the CMS and emails the team directly, instead of failing silently.</p>
     </div>
 
     <div class="cs-findings">
       <h3>What changed in this round</h3>
       <ul>
-        <li>Safety features rebuilt to hold up under real use: a persistent, keyboard- and back-button-proof exit route, and a Get help page that leads with two unambiguous actions.</li>
-        <li>Navigation and service names reorganised around what a visitor actually needs, replacing internal project acronyms with plain-English labels.</li>
-        <li>A full pass against WCAG 2.2 AA: colour contrast, heading structure, keyboard access, focus outlines, touch target sizing, screen reader labels and form labels, plus a returning language menu covering Welsh and community languages.</li>
-        <li>Design made consistent page to page on desktop and mobile alike, with compressed images for faster load, particularly on phones.</li>
-        <li>CMS and forms fixed and simplified, including a Get involved enquiry form that actually reaches the team.</li>
+        <li>Safety features rebuilt to hold up under real use: a persistent, back-button-proof exit route and a Get help page leading with two clear actions.</li>
+        <li>Navigation and services reorganised in plain English, replacing internal acronyms.</li>
+        <li>A full WCAG 2.2 AA pass, plus a returning language menu for Welsh and community languages.</li>
+        <li>Consistent design across desktop and mobile, with compressed images for faster loading.</li>
+        <li>CMS and forms fixed, including a Get involved form that reaches the team.</li>
       </ul>
     </div>
   </div>
@@ -471,8 +452,7 @@
 
 <section id="case-study-sober-points">
   <div class="wrap">
-    <span class="cs-tag">Case Study</span>
-    <span class="cs-tag" style="border-color:var(--gold);color:var(--gold);margin-left:8px;">&#9679; App submitted to App Store</span>
+    <p class="cs-tag-row">Case study<span class="sep">&middot;</span><span class="dot">&#9679;</span> App submitted to App Store</p>
     <div class="section-head" style="margin-bottom:0;">
       <h2>Sober Points: designing a better way to find sober-friendly places</h2>
       <p>Product design &middot; UX research &middot; Interaction design &middot; Prototyping &middot; Usability testing &middot; Product analytics</p>
@@ -500,17 +480,12 @@
 
     <div class="cs-narrative">
       <h3>Exploring the proposition</h3>
-      <p>Early wireframes explored several potential areas of the service, including sober communities, curated content, podcasts, products, events and a location-based map. The map was present from an early stage, allowing users to enter a location and explore sober-friendly options nearby.</p>
+      <p>Early wireframes explored several potential areas of the service, including sober communities, curated content, podcasts, products, events and a location-based map, present from an early stage so users could enter a location and explore sober-friendly options nearby. These weren't polished interfaces; they let me test the structure and value of different parts of the proposition before investing in detailed design and development.</p>
       <figure class="cs-placeholder">
         <img src="images/sober-lofi-screens.png" alt="Low-fidelity wireframes for the Sober Points community directory, Sober Map and a venue detail screen for The Fox and Sparrow." style="width:100%;border-radius:6px;border:1px solid var(--line);">
         <figcaption>Early low-fidelity concepts exploring content, community and location-based discovery.</figcaption>
       </figure>
-      <p>These weren't intended as polished interfaces. They gave me a quick way to test the structure and value of different parts of the proposition before investing in detailed design and development.</p>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Mapping the wider experience</h3>
-      <p>As the concept developed, I mapped the wider service rather than designing individual screens in isolation.</p>
+      <p>As the concept developed, I mapped the wider service &mdash; homepage, Sober Map, contribution journeys, content, contact and supporting communications &mdash; rather than designing individual screens in isolation, to think beyond individual screens and consider how someone might move from discovering Sober Points to finding somewhere suitable, and how the community could contribute information back into the platform.</p>
       <figure class="cs-placeholder full">
         <img src="images/sober-service-map.png" alt="A board mapping the Sober Points service across Home, About, the Sober Map, how to contribute, Blog, Contact, a popup and the confirmation email." style="width:100%;border-radius:6px;border:1px solid var(--line);">
         <figcaption>Mapping the service across discovery, venue information, contribution, content and supporting touchpoints.</figcaption>
@@ -519,30 +494,15 @@
         <img src="images/sober-sitemap-diagram.png" alt="A Sober Points site map diagram showing how the home, shop, sober map, community, about and contact pages relate to each other." style="width:100%;max-width:520px;border-radius:6px;border:1px solid var(--line);">
         <figcaption>The underlying site map, showing how the key pages and their sub-pages relate to one another.</figcaption>
       </figure>
-      <p>The architecture covered the homepage, Sober Map, contribution journeys, content, contact and supporting communications. This helped me think beyond individual screens and consider how someone might move from discovering Sober Points to finding somewhere suitable, and how the community could contribute information back into the platform.</p>
     </div>
 
     <div class="cs-narrative">
       <h3>Making venue discovery the core experience</h3>
-      <p>Through research, prototyping and iteration, Sober Points evolved from the broader content and community concept into a much more focused proposition: <strong style="color:var(--navy);">help me find somewhere good to go when I'm not drinking.</strong></p>
-      <p>Venue discovery became the core of the experience, which meant designing around a different set of questions: what's near me? Is it suitable for the kind of place I'm looking for? What alcohol-free options does it actually have? Can I trust the information? The product therefore needed to do more than put pins on a map.</p>
-      <figure class="cs-placeholder">
-        <div class="ph-box">Image to come: current map screen</div>
-        <figcaption>The live Sober Points discovery experience.</figcaption>
-      </figure>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Designing for quick decisions</h3>
-      <p>I designed the map and venue experience to progressively reveal information rather than making users investigate every venue individually. Users can search by location, move between map and venue results, apply filters and open individual venue profiles for more detail. Venue information can include imagery, alcohol-free options, attributes and community reviews, giving people more context before deciding where to go.</p>
+      <p>Through research, prototyping and iteration, Sober Points evolved from the broader content and community concept into a much more focused proposition: <strong style="color:var(--navy);">help me find somewhere good to go when I'm not drinking.</strong> That meant designing around a different set of questions: what's near me, is it suitable, what alcohol-free options does it actually have, and can I trust the information? So the map and venue experience progressively reveals information rather than making users investigate every venue individually &mdash; searching by location, filtering results, and opening a venue profile with imagery, alcohol-free options, attributes and community reviews for more context before deciding where to go.</p>
       <figure class="cs-placeholder">
         <div class="ph-box">Image to come: map/list view + venue profile</div>
+        <figcaption>The live Sober Points discovery experience.</figcaption>
       </figure>
-      <div class="cs-callouts">
-        <div><strong>Search by location</strong><p>Find options around a destination.</p></div>
-        <div><strong>Filter the results</strong><p>Reduce the number of unsuitable venues before opening individual profiles.</p></div>
-        <div><strong>Understand the AF offering</strong><p>Surface information relevant to someone choosing not to drink.</p></div>
-      </div>
     </div>
 
     <div class="cs-narrative">
@@ -554,22 +514,9 @@
     </div>
 
     <div class="cs-narrative">
-      <h3>Shipping, measuring and learning</h3>
-      <p>Launching the product wasn't the end of the design process. I instrumented the live experience with product analytics so I could understand how people were actually using Sober Points rather than relying solely on what people said during research, tracking behaviour across discovery, search, venue interactions and engagement with key functionality. Because this is commercially sensitive product data, I don't publish the underlying figures, but behavioural patterns help me identify where users are engaging, where journeys may be creating friction and what to investigate next.</p>
-      <div class="cs-flow">
-        <div class="step"><strong>Discover</strong><p>How people enter and explore the service.</p></div>
-        <div class="arrow">&rarr;</div>
-        <div class="step"><strong>Interact</strong><p>Which venue information and functionality they engage with.</p></div>
-        <div class="arrow">&rarr;</div>
-        <div class="step"><strong>Identify friction</strong><p>Where behaviour suggests a journey needs investigation.</p></div>
-        <div class="arrow">&rarr;</div>
-        <div class="step"><strong>Iterate</strong><p>Use behavioural evidence alongside qualitative research to prioritise improvements.</p></div>
-      </div>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Iterating after launch</h3>
-      <p>Real usage has continued to expose design problems that weren't obvious in the original interface. For example, venue types and venue attributes don't always belong at the same level: a restaurant, pub or shop describes what a place is, while something such as alcohol-free beer on draught describes what it offers. As the dataset and functionality grew, treating both as equivalent filters risked creating a confusing information hierarchy.</p>
+      <h3>Shipping, measuring and iterating</h3>
+      <p>Launching wasn't the end of the design process. I instrumented the live experience with product analytics to understand how people actually use Sober Points &mdash; discovering, searching, interacting with venues &mdash; rather than relying solely on what people said during research, and used those patterns alongside qualitative research to identify friction and prioritise what to fix next. Because this is commercially sensitive product data, I don't publish the underlying figures.</p>
+      <p>Real usage has continued to expose problems that weren't obvious in the original interface. For example, venue types and venue attributes don't always belong at the same level: a restaurant, pub or shop describes what a place is, while something such as alcohol-free beer on draught describes what it offers. As the dataset grew, treating both as equivalent filters risked a confusing hierarchy, so I separated venue type from more specific attributes and made the active state explicit within the results &mdash; a small change, but one that shows how the information architecture has to evolve as the product and its data get more complex.</p>
       <div class="cs-grid">
         <figure class="cs-placeholder">
           <div class="ph-box">Image to come: original filter design</div>
@@ -580,7 +527,6 @@
           <figcaption>The iteration: venue type separated from more specific attributes, with the active state made explicit within the results.</figcaption>
         </figure>
       </div>
-      <p>This is a relatively small interface change, but it illustrates an important part of my approach: the information architecture has to evolve as the product and its data become more complex.</p>
     </div>
 
     <div class="cs-narrative">
@@ -592,13 +538,8 @@
     </div>
 
     <div class="cs-narrative">
-      <h3>The outcome</h3>
-      <p>Sober Points progressed from exploratory wireframes and user research into a live product containing hundreds of sober-friendly venues, with real users searching, discovering and interacting with venue information. More importantly for me as a designer, it created an ongoing feedback loop: research &rarr; design &rarr; build &rarr; measure &rarr; learn &rarr; iterate. Building my own product has meant working beyond the boundaries of a conventional design handoff. I've had to make decisions about user needs, technical constraints, data quality, moderation, analytics and commercial viability, and then see how those decisions perform with real users.</p>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>What I learned</h3>
-      <p>The biggest lesson has been that good product design doesn't end when an interface is shipped. Some of the most useful design questions have appeared after launch, once the service contained more venues, more data and more functionality than the original prototypes ever had to accommodate. Sober Points continues to evolve, but the principle behind it has remained remarkably simple: make it easier to find somewhere you'll genuinely enjoy going, whether you're drinking alcohol or not.</p>
+      <h3>Outcome</h3>
+      <p>Sober Points progressed from exploratory wireframes and user research into a live product with hundreds of sober-friendly venues and real users searching, discovering and interacting with venue information. Building my own product meant working beyond a conventional design handoff: I've had to make decisions about user needs, technical constraints, data quality, moderation, analytics and commercial viability, then see how those decisions perform with real users through an ongoing loop of research, design, build, measure and iterate. The biggest lesson has been that good product design doesn't end at launch &mdash; some of the most useful design questions have appeared once the service held more venues, data and functionality than the original prototypes ever had to accommodate. The principle behind it has stayed simple: make it easier to find somewhere you'll genuinely enjoy going, whether you're drinking alcohol or not.</p>
     </div>
 
     <div class="cs-meta">
