@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Get in touch · Sara Shipley UX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch about a UX review or audit for your website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html" class="brand"><img src="images/sara-shipley.jpg" alt="">Sara Shipley <span>UX</span></a>
+    <button class="navtoggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <div class="navlinks" id="navLinks">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn active">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap page-header">
+  <span class="eyebrow">Get in touch</span>
+  <h1 class="display">Let's take a look at your site</h1>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="contact">
+      <p>If you're not sure where to start, the Website Quick-Fix Review is the easiest way in: 2 working days, one clear set of fixes, no commitment beyond that.</p>
+
+      <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="9fbee2f4-401e-443c-87ca-8f09beaf4d6f">
+        <input type="hidden" name="subject" value="New enquiry from shipleyux.com">
+        <input type="hidden" name="from_name" value="ShipleyUX contact form">
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">What are you looking to get sorted?</label>
+          <textarea id="cf-message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn" id="cfSubmit">Send message</button>
+        <div class="form-status" id="cfStatus" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="sub">Or email <a href="mailto:shipley.ux@gmail.com?subject=UX%20review%20enquiry" style="color:#fff;text-decoration:underline;">shipley.ux@gmail.com</a> directly &middot; usually replies within 24 hours</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Sara Shipley &middot; UX Design &amp; Consulting</span>
+    <span>Swansea, UK</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
