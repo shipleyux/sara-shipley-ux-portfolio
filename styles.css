@@ -137,9 +137,9 @@ nav.wrap{
 /* HERO */
 .hero{padding:68px 0 56px;}
 .hero h1{
-  font-size:clamp(2.6rem,6.4vw,4.9rem);
-  max-width:21ch;
-  margin-bottom:.3em;
+  font-size:clamp(2.1rem,4.6vw,3.6rem);
+  max-width:19ch;
+  margin-bottom:.35em;
 }
 .hero .lede{
   font-size:1.15rem;color:var(--muted);max-width:60ch;margin-bottom:.9em;
