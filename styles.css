@@ -142,7 +142,10 @@ nav.wrap{
   margin-bottom:.3em;
 }
 .hero .lede{
-  font-size:1.15rem;color:var(--muted);max-width:60ch;margin-bottom:1.6em;
+  font-size:1.15rem;color:var(--muted);max-width:60ch;margin-bottom:.9em;
+}
+.hero .services-line{
+  font-size:1rem;color:var(--navy-2);font-weight:600;max-width:60ch;margin-bottom:1.7em;
 }
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;}
 
@@ -169,7 +172,7 @@ section.alt{background:var(--panel);}
 .card .turnaround{font-size:.82rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1em;}
 .card h3{font-size:1.15rem;margin-bottom:.3em;}
 .card p{color:var(--muted);font-size:.95rem;flex-grow:1;}
-.card.featured{border-color:var(--gold);box-shadow:0 4px 24px rgba(0,0,0,.07);}
+.card.featured{box-shadow:0 4px 24px rgba(0,0,0,.07);}
 .featured-note{color:var(--navy);font-size:.85rem;font-weight:600;margin:-.4em 0 1em;}
 
 /* WHY IT MATTERS */
