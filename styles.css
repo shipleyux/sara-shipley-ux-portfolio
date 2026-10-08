@@ -169,9 +169,16 @@ section.alt{background:var(--panel);}
   font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.01em;font-size:1.9rem;color:var(--navy);
   margin:.15em 0 .15em;
 }
+.card .price.price-text{
+  font-family:'Inter',sans-serif;font-weight:700;letter-spacing:0;font-size:1.1rem;
+}
 .card .turnaround{font-size:.82rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1em;}
 .card h3{font-size:1.15rem;margin-bottom:.3em;}
-.card p{color:var(--muted);font-size:.95rem;flex-grow:1;}
+.card .desc{color:var(--muted);font-size:.95rem;flex-grow:1;margin-bottom:1.4em;}
+.card .card-cta{margin-top:auto;}
+.card .card-cta .btn{width:100%;box-sizing:border-box;text-align:center;}
+.card .upsell{font-size:.85rem;color:var(--muted);margin:.9em 0 0;}
+.card .upsell a{color:var(--navy);font-weight:600;text-decoration:underline;}
 .card.featured{box-shadow:0 4px 24px rgba(0,0,0,.07);}
 .featured-note{color:var(--navy);font-size:.85rem;font-weight:600;margin:-.4em 0 1em;}
 
