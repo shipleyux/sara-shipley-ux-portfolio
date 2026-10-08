@@ -46,8 +46,8 @@
         <figcaption>Before: twelve nav items, helpline buried below the fold, no clear starting point for a visitor in crisis.</figcaption>
       </figure>
       <figure>
-        <img src="after.jpg" alt="Figma mockups of the redesigned site: a calmer layout with a crisis message bar, clear primary actions, and a simplified page structure.">
-        <figcaption>After: wireframes and mockups, crisis messaging first, simplified navigation, calmer visual tone. Now live at swanseawomensaid.com.</figcaption>
+        <img src="after.jpg" alt="The live, redesigned Swansea Women's Aid homepage: a calmer layout with a persistent safety bar, clear primary actions, and a simplified page structure.">
+        <figcaption>After: a persistent safety bar, crisis messaging first, simplified navigation, calmer visual tone. Live at swanseawomensaid.com.</figcaption>
       </figure>
     </div>
 
@@ -84,26 +84,11 @@
     <div class="cs-narrative" style="margin-top:56px;padding-top:40px;border-top:1px solid var(--line);">
       <p class="cs-tag-row"><span class="dot">&#9679;</span> Updated September 2026</p>
       <h3>Continued iteration: a full UX review and refresh</h3>
-      <p>The original site had been rebuilt in a hurry after the charity lost content to an accidental deletion, so parts of it were never quite finished. Once I took over development directly, I went back through the whole site: fixing what hadn't been properly rebuilt, tightening the design, reorganising key journeys, and working through a full accessibility pass, all while keeping the charity's existing branding and tone.</p>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Safety comes first</h3>
-      <p>Safety features only work if they're genuinely usable under pressure. The exit button now stays visible at the top of the screen as the page scrolls, responds to the Esc key, and can't be undone with the browser's Back button. The helpline number is tappable to call directly on a phone, and the Get help page leads with two unambiguous actions rather than a paragraph to read through first.</p>
+      <p>The original site had been rebuilt in a hurry after the charity lost content to an accidental deletion, so parts of it were never quite finished. I went back through the whole site: fixing what hadn't been properly rebuilt, tightening the design, reorganising key journeys in plain English, and working through a full WCAG 2.2 AA accessibility pass &mdash; while keeping the charity's existing branding and tone.</p>
       <figure class="cs-placeholder full">
-        <img src="images/swa-safety-buttons.png" alt="The Swansea Women's Aid Get help page, showing a persistent exit-site bar with a tap-to-call helpline number, and two clear buttons: Call 999 and Call our 24-hour helpline." style="width:100%;border-radius:6px;border:1px solid var(--line);">
-        <figcaption>The Get help page now leads with two clear actions, alongside a persistent, keyboard-accessible exit route.</figcaption>
+        <img src="images/swa-gethelp-new.jpg" alt="The Swansea Women's Aid Get help page, showing a persistent exit-site bar with a tap-to-call helpline number, and two clear buttons: Call 999 and Call our 24-hour helpline." style="width:100%;border-radius:6px;border:1px solid var(--line);">
+        <figcaption>Safety features rebuilt to hold up under real use: a persistent, back-button-proof exit route, and a Get help page leading with two unambiguous actions.</figcaption>
       </figure>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>A consistent, accessible experience</h3>
-      <p>The main menu now opens with Get help, followed by plain-English service names, like "Children and young people" rather than the internal acronym CHYPS, each with its own page for volunteering, vacancies and complaints. I also brought the font, spacing, buttons and cards in line across the whole site, and compressed every photo so pages load noticeably faster on mobile, where most visitors land first.</p>
-      <figure class="cs-placeholder full">
-        <img src="images/swa-homepage-devices.png" alt="The Swansea Women's Aid homepage shown on both a laptop and a phone, with the persistent safety bar, consistent card-based design and the reorganised menu visible on both." style="width:100%;border-radius:6px;border:1px solid var(--line);">
-        <figcaption>The refreshed homepage, built to the same design system on desktop and mobile.</figcaption>
-      </figure>
-      <p>I also worked through a full WCAG 2.2 AA pass &mdash; contrast, heading structure, keyboard access, focus outlines, touch target sizing and screen reader labels &mdash; and brought back a language menu covering Welsh and the most commonly spoken community languages. Behind the scenes, the CMS now has clearer fields for staff, and the Get involved form saves to the CMS and emails the team directly, instead of failing silently.</p>
     </div>
 
     <div class="cs-findings">
@@ -131,82 +116,49 @@
 
     <div class="cs-narrative">
       <h3>The problem</h3>
-      <p>Finding somewhere to eat or socialise is easy. Finding somewhere that's genuinely good when you're not drinking is harder. Information about alcohol-free options is often incomplete, buried within menus or unavailable until you arrive. Existing discovery platforms weren't designed around this need.</p>
-      <p>The initial question was: <strong style="color:var(--navy);">how might we make it easier for people to discover places where they can have a genuinely good experience without alcohol?</strong> But I deliberately didn't jump straight to a venue-finding app. Early Sober Points concepts explored a much broader ecosystem around sober living, including communities, podcasts, events, products and places.</p>
+      <p>Finding somewhere to eat or socialise is easy. Finding somewhere that's genuinely good when you're not drinking is harder: information about alcohol-free options is often incomplete, buried within menus, or unavailable until you arrive.</p>
+      <p>The initial question was <strong style="color:var(--navy);">how might we make it easier for people to discover places where they can have a genuinely good experience without alcohol?</strong> I deliberately didn't jump straight to a venue-finding app: early concepts explored a much broader ecosystem around sober living, including communities, podcasts, events and products, before research progressively narrowed the proposition.</p>
       <figure class="cs-placeholder">
-        <img src="images/sober-early-concepts.png" alt="An early Sober Points concept board showing a participant list, sticky-note research notes, and wireframes for the homepage, community directory, podcasts and Sober Map." style="width:100%;border-radius:6px;border:1px solid var(--line);">
-        <figcaption>Early concept exploration and usability testing. Initial prototypes explored several aspects of sober discovery before the proposition was narrowed.</figcaption>
+        <img src="images/sober-early-concepts.png" alt="Early Sober Points concept wireframes for the homepage, community directory, podcasts and Sober Map." style="width:100%;border-radius:6px;border:1px solid var(--line);">
+        <figcaption>Early concept exploration across communities, content, podcasts and location-based discovery, before the proposition was narrowed.</figcaption>
       </figure>
     </div>
 
     <div class="cs-narrative">
-      <h3>Starting with users</h3>
-      <p>I carried out user research to understand how people currently discovered sober-friendly experiences, what information they needed and where existing services fell short. Rather than testing a predetermined solution, I used early concepts to explore which parts of the proposition were most useful and how people expected the service to work. Research informed both the content of the service and its structure, and helped me progressively narrow what was initially a very broad proposition.</p>
-      <div class="cs-pending">Research findings to follow: this section will carry the strongest 2&ndash;3 things the research surfaced, each with the observation behind it and what it changed in the design.</div>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Exploring the proposition</h3>
-      <p>Early wireframes explored several potential areas of the service, including sober communities, curated content, podcasts, products, events and a location-based map, present from an early stage so users could enter a location and explore sober-friendly options nearby. These weren't polished interfaces; they let me test the structure and value of different parts of the proposition before investing in detailed design and development.</p>
-      <figure class="cs-placeholder">
-        <img src="images/sober-lofi-screens.png" alt="Low-fidelity wireframes for the Sober Points community directory, Sober Map and a venue detail screen for The Fox and Sparrow." style="width:100%;border-radius:6px;border:1px solid var(--line);">
-        <figcaption>Early low-fidelity concepts exploring content, community and location-based discovery.</figcaption>
-      </figure>
-      <p>As the concept developed, I mapped the wider service &mdash; homepage, Sober Map, contribution journeys, content, contact and supporting communications &mdash; rather than designing individual screens in isolation, to think beyond individual screens and consider how someone might move from discovering Sober Points to finding somewhere suitable, and how the community could contribute information back into the platform.</p>
-      <figure class="cs-placeholder full">
-        <img src="images/sober-service-map.png" alt="A board mapping the Sober Points service across Home, About, the Sober Map, how to contribute, Blog, Contact, a popup and the confirmation email." style="width:100%;border-radius:6px;border:1px solid var(--line);">
-        <figcaption>Mapping the service across discovery, venue information, contribution, content and supporting touchpoints.</figcaption>
-      </figure>
-      <figure class="cs-placeholder">
-        <img src="images/sober-sitemap-diagram.png" alt="A Sober Points site map diagram showing how the home, shop, sober map, community, about and contact pages relate to each other." style="width:100%;max-width:520px;border-radius:6px;border:1px solid var(--line);">
-        <figcaption>The underlying site map, showing how the key pages and their sub-pages relate to one another.</figcaption>
-      </figure>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Making venue discovery the core experience</h3>
-      <p>Through research, prototyping and iteration, Sober Points evolved from the broader content and community concept into a much more focused proposition: <strong style="color:var(--navy);">help me find somewhere good to go when I'm not drinking.</strong> That meant designing around a different set of questions: what's near me, is it suitable, what alcohol-free options does it actually have, and can I trust the information? So the map and venue experience progressively reveals information rather than making users investigate every venue individually &mdash; searching by location, filtering results, and opening a venue profile with imagery, alcohol-free options, attributes and community reviews for more context before deciding where to go.</p>
-      <figure class="cs-placeholder">
-        <div class="ph-box">Image to come: map/list view + venue profile</div>
-        <figcaption>The live Sober Points discovery experience.</figcaption>
-      </figure>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Designing a two-sided service</h3>
-      <p>One of the challenges was that Sober Points wasn't simply a consumer interface: the usefulness of the product depends on the quality of the venue information behind it. I therefore designed contribution and moderation journeys alongside the discovery experience, allowing information to be added and updated while maintaining control over what appeared publicly. Venue owners can also claim their listings, creating a route towards more accurate, owner-verified information.</p>
-      <figure class="cs-placeholder">
-        <div class="ph-box">Image to come: add / update / claim venue screen</div>
-      </figure>
-    </div>
-
-    <div class="cs-narrative">
-      <h3>Shipping, measuring and iterating</h3>
-      <p>Launching wasn't the end of the design process. I instrumented the live experience with product analytics to understand how people actually use Sober Points &mdash; discovering, searching, interacting with venues &mdash; rather than relying solely on what people said during research, and used those patterns alongside qualitative research to identify friction and prioritise what to fix next. Because this is commercially sensitive product data, I don't publish the underlying figures.</p>
-      <p>Real usage has continued to expose problems that weren't obvious in the original interface. For example, venue types and venue attributes don't always belong at the same level: a restaurant, pub or shop describes what a place is, while something such as alcohol-free beer on draught describes what it offers. As the dataset grew, treating both as equivalent filters risked a confusing hierarchy, so I separated venue type from more specific attributes and made the active state explicit within the results &mdash; a small change, but one that shows how the information architecture has to evolve as the product and its data get more complex.</p>
+      <h3>Research narrowed a broad idea into one job</h3>
+      <p>I used those early concepts to test which parts of the proposition people actually valued, rather than researching a predetermined solution. That process, alongside usability testing, repeatedly surfaced the same thing: people didn't want another community or content platform &mdash; they wanted a fast, trustworthy answer to "where can I go near me?" That finding is what cut Sober Points back from a broad sober-living ecosystem to a focused discovery tool.</p>
+      <p>I mapped the wider service &mdash; homepage, Sober Map, contribution journeys and supporting communications &mdash; rather than designing individual screens in isolation, so I could see how someone moves from discovering Sober Points to finding somewhere suitable, and how the community feeds information back into the platform.</p>
       <div class="cs-grid">
         <figure class="cs-placeholder">
-          <div class="ph-box">Image to come: original filter design</div>
-          <figcaption>The problem: category and attribute filters were visually competing at the same level.</figcaption>
+          <img src="images/sober-service-map.png" alt="A board mapping the Sober Points service across Home, About, the Sober Map, how to contribute, Blog and Contact." style="width:100%;border-radius:6px;border:1px solid var(--line);">
+          <figcaption>Mapping the service end-to-end, not just individual screens.</figcaption>
         </figure>
         <figure class="cs-placeholder">
-          <div class="ph-box">Image to come: current filter design</div>
-          <figcaption>The iteration: venue type separated from more specific attributes, with the active state made explicit within the results.</figcaption>
+          <img src="images/sober-sitemap-diagram.png" alt="A Sober Points site map diagram showing how the home, shop, sober map, community, about and contact pages relate to each other." style="width:100%;border-radius:6px;border:1px solid var(--line);">
+          <figcaption>The underlying site map behind it.</figcaption>
         </figure>
       </div>
     </div>
 
     <div class="cs-narrative">
+      <h3>Making venue discovery the core experience</h3>
+      <p>Sober Points evolved into a focused proposition: <strong style="color:var(--navy);">help me find somewhere good to go when I'm not drinking.</strong> The map and venue experience progressively reveals information rather than making users investigate every venue individually &mdash; search by location, filter results, then open a venue profile with alcohol-free options, attributes and community reviews.</p>
+    </div>
+
+    <div class="cs-narrative">
+      <h3>Designing a two-sided service, then iterating on real usage</h3>
+      <p>Sober Points isn't just a consumer interface: it depends on the quality of the venue information behind it, so I designed contribution, moderation and venue-claiming journeys alongside the discovery experience. After launch, I used product analytics alongside qualitative research to prioritise what to fix next &mdash; this data is commercially sensitive, so I don't publish the underlying figures.</p>
+      <p>Real usage kept exposing problems the original interface hadn't anticipated. For example, venue type (a restaurant, pub or shop) and venue attribute (alcohol-free beer on draught) don't belong at the same level, and treating them as equivalent filters created a confusing hierarchy as the dataset grew. I separated venue type from more specific attributes and made the active state explicit within the results &mdash; a small change that shows how the IA has to evolve as the product gets more complex.</p>
+    </div>
+
+    <div class="cs-narrative">
       <h3>From web product to native app</h3>
-      <p>As Sober Points developed, I also translated the experience into a native mobile application. This wasn't simply a visual port of the website: mobile introduced different interaction considerations around map behaviour, navigation, authentication, saved venues and returning to the app through deep links.</p>
-      <figure class="cs-placeholder full">
-        <div class="ph-box">Image to come: three current app screens</div>
-      </figure>
+      <p>As Sober Points developed, I translated the experience into a native mobile app &mdash; not a visual port of the website, but a rethink of map behaviour, navigation, authentication, saved venues and returning to the app through deep links.</p>
     </div>
 
     <div class="cs-narrative">
       <h3>Outcome</h3>
-      <p>Sober Points progressed from exploratory wireframes and user research into a live product with hundreds of sober-friendly venues and real users searching, discovering and interacting with venue information. Building my own product meant working beyond a conventional design handoff: I've had to make decisions about user needs, technical constraints, data quality, moderation, analytics and commercial viability, then see how those decisions perform with real users through an ongoing loop of research, design, build, measure and iterate. The biggest lesson has been that good product design doesn't end at launch &mdash; some of the most useful design questions have appeared once the service held more venues, data and functionality than the original prototypes ever had to accommodate. The principle behind it has stayed simple: make it easier to find somewhere you'll genuinely enjoy going, whether you're drinking alcohol or not.</p>
+      <p>Sober Points progressed from exploratory wireframes into a live product with hundreds of sober-friendly venues and real users searching, discovering and interacting with venue information. Building my own product meant owning decisions about user needs, technical constraints, data quality, moderation and commercial viability, then seeing how those decisions performed through an ongoing loop of research, design, build, measure and iterate. The principle has stayed simple throughout: make it easier to find somewhere you'll genuinely enjoy going, whether you're drinking alcohol or not.</p>
     </div>
 
     <div class="cs-meta">

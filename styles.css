@@ -182,13 +182,10 @@ section.alt{background:var(--panel);}
 .card.featured{box-shadow:0 4px 24px rgba(0,0,0,.07);}
 .featured-note{color:var(--navy);font-size:.85rem;font-weight:600;margin:-.4em 0 1em;}
 
-/* WHY IT MATTERS */
-.why{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
-.why blockquote{
-  margin:0;padding:28px 30px;background:var(--gold-light);border-left:3px solid var(--gold);
-  border-radius:4px;font-family:'Inter',sans-serif;font-weight:500;font-size:1.15rem;color:var(--navy);line-height:1.5;
-}
-.why blockquote cite{display:block;margin-top:14px;font-family:'Inter',sans-serif;font-size:.82rem;color:var(--muted);font-style:normal;}
+/* Homepage condensed services cards: same system, tighter and no per-card CTA */
+.cards-compact{margin-top:36px;}
+.cards-compact .card{padding:26px 24px;}
+.cards-compact .card .desc{margin-bottom:0;}
 
 /* CASE STUDY */
 .cs-tag-row{font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:18px;}
