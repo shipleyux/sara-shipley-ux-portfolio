@@ -3,10 +3,10 @@
   --navy-2:#2e2e2e;
   --ink:#19191c;
   --paper:#ffffff;
-  --panel:#f4f2fb;
-  --line:#ded7f2;
-  --gold:#6354d6;
-  --gold-light:#efe9fc;
+  --panel:#f5f5f2;
+  --line:#e3e3df;
+  --gold:#d6ef41;
+  --gold-light:#f6f9df;
   --coral:#4257cf;
   --lime:#d6ef41;
   --muted:#55555f;
@@ -21,7 +21,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2{
+h1{
   font-family:'Anton',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   color:var(--navy);
   line-height:.96;
@@ -29,6 +29,17 @@ h1,h2{
   font-weight:400;
   text-transform:uppercase;
   letter-spacing:.005em;
+}
+/* h2 keeps the display face for consistency but drops the shout: no caps, calmer size */
+h2{
+  font-family:'Anton',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--navy);
+  line-height:1.1;
+  margin:0 0 .45em;
+  font-weight:400;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:clamp(1.5rem,2.6vw,2.05rem);
 }
 h3{
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -47,7 +58,7 @@ img{max-width:100%;display:block;}
   letter-spacing:.12em;
   font-size:.75rem;
   font-weight:600;
-  color:var(--gold);
+  color:var(--navy-2);
   margin-bottom:.75em;
   display:block;
 }
@@ -87,12 +98,15 @@ nav.wrap{
   text-decoration:none;
   white-space:nowrap;
 }
-.brand span{color:var(--gold);}
+.brand span{
+  color:var(--navy);background:var(--lime);
+  padding:1px 7px;border-radius:3px;font-size:.78em;
+}
 .navlinks{display:flex;gap:28px;align-items:center;}
 .navlinks a{
   text-decoration:none;color:var(--navy-2);font-size:.92rem;font-weight:600;
 }
-.navlinks a:hover{color:var(--gold);}
+.navlinks a:hover{color:var(--navy);}
 .navlinks a.active{color:var(--navy);position:relative;}
 .navlinks a.active::after{
   content:"";position:absolute;left:0;right:0;bottom:-18px;height:3px;background:var(--gold);
@@ -121,25 +135,24 @@ nav.wrap{
 .navtoggle{display:none;background:none;border:0;font-size:1.5rem;color:var(--navy);cursor:pointer;}
 
 /* HERO */
-.hero{padding:96px 0 76px;}
+.hero{padding:68px 0 56px;}
 .hero h1{
-  font-size:clamp(2.6rem,6vw,4.6rem);
-  max-width:15ch;
+  font-size:clamp(2.6rem,6.4vw,4.9rem);
+  max-width:21ch;
   margin-bottom:.3em;
 }
 .hero .lede{
-  font-size:1.15rem;color:var(--muted);max-width:56ch;margin-bottom:1.8em;
+  font-size:1.15rem;color:var(--muted);max-width:60ch;margin-bottom:1.6em;
 }
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;}
 
-section{padding:72px 0;}
+section{padding:60px 0;}
 section.alt{background:var(--panel);}
-.section-head{max-width:60ch;margin-bottom:44px;}
-.section-head h2{font-size:clamp(1.6rem,2.6vw,2.1rem);}
+.section-head{max-width:60ch;margin-bottom:36px;}
 .section-head p{color:var(--muted);font-size:1.05rem;}
 
 /* PAGE HEADER (non-home pages) */
-.page-header{padding:60px 0 8px;}
+.page-header{padding:48px 0 6px;}
 .page-header h1{font-size:clamp(2.2rem,4.6vw,3.6rem);max-width:18ch;margin-bottom:.35em;}
 .page-header p{color:var(--muted);font-size:1.05rem;max-width:60ch;}
 
@@ -153,11 +166,11 @@ section.alt{background:var(--panel);}
   font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.01em;font-size:1.9rem;color:var(--navy);
   margin:.15em 0 .15em;
 }
-.card .turnaround{font-size:.82rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1em;}
+.card .turnaround{font-size:.82rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1em;}
 .card h3{font-size:1.15rem;margin-bottom:.3em;}
 .card p{color:var(--muted);font-size:.95rem;flex-grow:1;}
-.card.featured{border-color:var(--gold);box-shadow:0 4px 24px rgba(99,84,214,.1);}
-.featured-note{color:var(--gold);font-size:.85rem;font-weight:600;margin:-.4em 0 1em;}
+.card.featured{border-color:var(--gold);box-shadow:0 4px 24px rgba(0,0,0,.07);}
+.featured-note{color:var(--navy);font-size:.85rem;font-weight:600;margin:-.4em 0 1em;}
 
 /* WHY IT MATTERS */
 .why{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
@@ -204,7 +217,7 @@ section.alt{background:var(--panel);}
 .cs-flow .step{flex:1;min-width:150px;background:var(--panel);border-radius:6px;padding:16px 14px;}
 .cs-flow .step strong{display:block;color:var(--navy);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px;}
 .cs-flow .step p{margin:0;font-size:.85rem;color:var(--muted);}
-.cs-flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;flex:0 0 24px;}
+.cs-flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--navy-2);font-size:1.1rem;flex:0 0 24px;}
 .cs-pending{
   background:var(--gold-light);border:1px solid var(--gold);border-radius:6px;
   padding:18px 20px;margin-top:20px;font-size:.9rem;color:var(--navy-2);
