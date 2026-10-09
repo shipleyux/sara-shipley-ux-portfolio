@@ -155,7 +155,7 @@ section.alt{background:var(--panel);}
 .section-head p{color:var(--muted);font-size:1.05rem;}
 
 /* PAGE HEADER (non-home pages) */
-.page-header{padding:48px 0 6px;}
+.page-header{padding-block:48px 6px;}
 .page-header h1{font-size:clamp(2.2rem,4.6vw,3.6rem);max-width:18ch;margin-bottom:.35em;}
 .page-header p{color:var(--muted);font-size:1.05rem;max-width:60ch;}
 
