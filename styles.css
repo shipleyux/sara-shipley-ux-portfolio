@@ -169,6 +169,11 @@ section.alt{background:var(--panel);}
 .cs-meta{display:flex;gap:var(--sp-2);margin-top:var(--sp-3);flex-wrap:wrap;}
 .cs-meta div{border:1px solid var(--line);border-radius:6px;padding:var(--sp-2);font-size:.85rem;color:var(--muted);flex:1;min-width:190px;}
 .cs-meta strong{display:block;color:var(--ink);font-size:.9rem;margin-bottom:2px;}
+.cs-app-shots{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3);}
+.cs-app-shots figure{margin:0;width:140px;}
+.cs-app-shots img{width:140px;border-radius:14px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.08);display:block;}
+.cs-app-shots figcaption{margin-top:var(--sp-1);font-size:.78rem;color:var(--muted);text-align:center;}
+.cs-logo{height:28px;width:auto;margin-bottom:var(--sp-2);}
 .cs-case{margin-top:var(--sp-6);padding-top:var(--sp-6);border-top:1px solid var(--line);}
 .cs-case:first-of-type{margin-top:0;padding-top:0;border-top:none;}
 
