@@ -2,74 +2,214 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Get in touch · Sara Shipley UX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Get in touch about a UX review or audit for your website.">
+<title>Get in touch &middot; Sara Shipley UX</title>
+<meta name="description" content="Get in touch about a website or app, a UX review, or an audit for your site.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#15141a; --muted:#625f6b; --line:#ece6e1;
+    --peach:#f3cfc0; --peach-deep:#e8b6a3; --cream:#faf6f2;
+    --black:#15141a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:'Fraunces',serif;}
+  .wrap{max-width:1140px;margin:0 auto;padding-inline:40px;}
+  a{color:inherit;}
+  .skip-link{
+    position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:12px 20px;
+    z-index:100;border-radius:0 0 8px 0;text-decoration:none;font-size:.9rem;
+  }
+  .skip-link:focus{left:0;}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;}
+  .navlinks{display:flex;gap:32px;align-items:center;font-size:.92rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink);}
+  .navtoggle{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;width:40px;height:40px;font-size:1.1rem;cursor:pointer;flex-shrink:0;}
+  .btn{display:inline-block;padding:13px 26px;border-radius:30px;font-weight:600;font-size:.88rem;text-decoration:none;border:1.5px solid var(--ink);white-space:nowrap;}
+  .btn.primary{background:var(--peach);border-color:var(--peach);color:var(--ink);}
+  .btn.outline{background:transparent;color:var(--ink);}
+  .btn.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+
+  @media (max-width:760px){
+    .navtoggle{display:block;}
+    .navlinks{
+      position:absolute;top:calc(100% + 10px);right:0;left:0;
+      background:#fff;border:1px solid var(--line);border-radius:14px;
+      flex-direction:column;align-items:flex-start;gap:0;padding:8px;
+      box-shadow:0 16px 40px rgba(0,0,0,.08);
+      display:none;z-index:40;
+    }
+    .navlinks.open{display:flex;}
+    .navlinks a{width:100%;padding:14px 12px;border-radius:8px;}
+    .navlinks .btn{width:100%;text-align:center;margin-top:4px;}
+  }
+
+  .page-head{padding:50px 0 20px;}
+  .eyebrow{font-weight:600;font-size:.85rem;letter-spacing:.03em;margin-bottom:16px;display:block;color:var(--muted);text-transform:uppercase;}
+  .page-head h1{font-family:'Fraunces',serif;font-weight:500;font-size:2.4rem;letter-spacing:-.01em;margin:0 0 16px;}
+
+  .contact-section{padding:20px 0 90px;}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start;}
+  .contact-grid p.lede{color:var(--muted);font-size:1.02rem;max-width:48ch;margin:0 0 30px;}
+
+  .contact-form{background:var(--cream);border-radius:22px;padding:40px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+  .form-group{margin-bottom:18px;}
+  .form-group label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .form-group input, .form-group textarea{
+    width:100%;padding:13px 14px;border-radius:10px;border:1.5px solid var(--line);font-family:'Inter',sans-serif;font-size:.95rem;background:#fff;color:var(--ink);
+  }
+  .form-group textarea{resize:vertical;}
+  .hp-field{position:absolute;left:-9999px;}
+  button[type="submit"]{
+    width:100%;padding:15px;border-radius:30px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;
+  }
+  .form-status{margin-top:16px;font-size:.88rem;min-height:1.2em;}
+  .form-status.success{color:#1d7a46;}
+  .form-status.error{color:#b3362a;}
+
+  .contact-visual{
+    border-radius:22px;background:linear-gradient(160deg,var(--peach),var(--peach-deep));aspect-ratio:1/1.1;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-sub{margin-top:26px;color:var(--muted);font-size:.92rem;}
+  .contact-sub a{font-weight:600;text-decoration:underline;color:var(--ink);}
+
+  footer.site-footer{padding:30px 0;border-top:1px solid var(--line);}
+  footer.site-footer .wrap{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);}
+
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;}
+    .contact-visual{display:none;}
+    .form-row{grid-template-columns:1fr;}
+  }
+</style>
 </head>
 <body>
 
-<header class="site">
-  <nav class="wrap">
-    <a href="index.html" class="brand"><img src="images/sara-shipley.jpg" alt="">Sara Shipley <span>UX</span></a>
-    <button class="navtoggle" id="navToggle" aria-label="Menu">&#9776;</button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+  <nav class="wrap" aria-label="Primary">
+    <a href="index.html" class="brand">Sara Shipley</a>
+    <button class="navtoggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
     <div class="navlinks" id="navLinks">
-      <a href="index.html#services">Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn active">Get in touch</a>
+      <a href="index.html#work">Work</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="btn active">Contact</a>
     </div>
   </nav>
 </header>
 
-<div class="wrap page-header">
-  <span class="eyebrow">Get in touch</span>
-  <h1>Let's take a look at your site</h1>
-</div>
+<main id="main">
 
-<section>
+<section class="page-head">
   <div class="wrap">
-    <div class="contact">
-      <p>If you're not sure where to start, the Website Quick-Fix Review is the easiest way in: 2 working days, one clear set of fixes, no commitment beyond that.</p>
-
-      <form class="contact-form" id="contactForm">
-        <input type="hidden" name="access_key" value="9fbee2f4-401e-443c-87ca-8f09beaf4d6f">
-        <input type="hidden" name="subject" value="New enquiry from shipleyux.com">
-        <input type="hidden" name="from_name" value="ShipleyUX contact form">
-        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="cf-name">Name</label>
-            <input type="text" id="cf-name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="cf-email">Email</label>
-            <input type="email" id="cf-email" name="email" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="cf-message">What are you looking to get sorted?</label>
-          <textarea id="cf-message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn" id="cfSubmit">Send message</button>
-        <div class="form-status" id="cfStatus" role="status" aria-live="polite"></div>
-      </form>
-
-      <div class="sub">Or email <a href="mailto:shipley.ux@gmail.com?subject=UX%20review%20enquiry">shipley.ux@gmail.com</a> directly &middot; usually replies within 24 hours</div>
-    </div>
+    <span class="eyebrow">Get in touch</span>
+    <h1>Let's talk about your project</h1>
   </div>
 </section>
 
-<footer>
+<section class="contact-section">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="lede">If you're not sure where to start, the Website Quick-Fix Review is the easiest way in: 2 working days, one clear set of fixes, no commitment beyond that. Or just tell me what's going on and I'll point you in the right direction.</p>
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <input type="hidden" name="access_key" value="9fbee2f4-401e-443c-87ca-8f09beaf4d6f">
+          <input type="hidden" name="subject" value="New enquiry from shipleyux.com">
+          <input type="hidden" name="from_name" value="ShipleyUX contact form">
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">What are you looking to get sorted?</label>
+            <textarea id="cf-message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" id="cfSubmit">Send message</button>
+          <div class="form-status" id="cfStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="contact-sub">Or email <a href="mailto:shipley.ux@gmail.com?subject=UX%20review%20enquiry">shipley.ux@gmail.com</a> directly &middot; usually replies within 24 hours</div>
+    </div>
+    <div class="contact-visual"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
   <div class="wrap">
-    <span>&copy; <span id="year"></span> Sara Shipley &middot; UX Design &amp; Consulting</span>
+    <span>&copy; Sara Shipley &middot; UX Design &amp; Consulting</span>
     <span>Swansea, UK</span>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var navLinksEl = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){
+    var isOpen = navLinksEl.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinksEl.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinksEl.classList.remove('open'); });
+  });
+
+  var cf = document.getElementById('contactForm');
+  if (cf) {
+    var cfStatus = document.getElementById('cfStatus');
+    var cfSubmit = document.getElementById('cfSubmit');
+    cf.addEventListener('submit', function(e){
+      e.preventDefault();
+      cfSubmit.disabled = true;
+      cfSubmit.textContent = 'Sending…';
+      cfStatus.textContent = '';
+      cfStatus.className = 'form-status';
+
+      var data = Object.fromEntries(new FormData(cf));
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(result){
+        if (result.success) {
+          cfStatus.textContent = "Thanks, I've got your message and will reply within 24 hours.";
+          cfStatus.className = 'form-status success';
+          cf.reset();
+        } else {
+          cfStatus.textContent = 'Something went wrong sending that. Please email shipley.ux@gmail.com instead.';
+          cfStatus.className = 'form-status error';
+        }
+      })
+      .catch(function(){
+        cfStatus.textContent = 'Something went wrong sending that. Please email shipley.ux@gmail.com instead.';
+        cfStatus.className = 'form-status error';
+      })
+      .finally(function(){
+        cfSubmit.disabled = false;
+        cfSubmit.textContent = 'Send message';
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
