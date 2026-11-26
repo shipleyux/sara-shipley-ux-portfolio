@@ -7,19 +7,18 @@
 <meta name="description" content="Packages and rates for UX audits, ongoing consulting, and full website and app builds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fdf3ef; --ink:#17161c; --muted:#5c5868; --paper:#ffffff; --line:#ece4de;
-    --purple-bg:#ded4f7; --purple-ink:#4b3b86;
-    --coral-bg:#fad2cb; --coral-ink:#8a3220;
-    --mint-bg:#cdeede; --mint-ink:#155c42;
+    --bg:#ffffff; --ink:#15141a; --muted:#625f6b; --line:#ece6e1;
+    --peach:#f3cfc0; --peach-deep:#e8b6a3; --cream:#faf6f2;
+    --black:#15141a;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
-  .mono{font-family:'JetBrains Mono',monospace;}
-  .wrap{max-width:1120px;margin:0 auto;padding-inline:40px;}
+  .serif{font-family:'Fraunces',serif;}
+  .wrap{max-width:1140px;margin:0 auto;padding-inline:40px;}
   a{color:inherit;}
   .skip-link{
     position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:12px 20px;
@@ -27,54 +26,52 @@
   }
   .skip-link:focus{left:0;}
 
-  nav{display:flex;align-items:center;justify-content:space-between;padding:28px 0;position:relative;}
-  .brand{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;white-space:nowrap;color:var(--ink);text-decoration:none;}
-  .navlinks{display:flex;gap:30px;align-items:center;font-size:.85rem;font-weight:600;letter-spacing:.02em;}
-  .navlinks a{text-decoration:none;color:var(--ink);text-transform:uppercase;font-size:.78rem;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;}
+  .navlinks{display:flex;gap:32px;align-items:center;font-size:.92rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink);}
   .navtoggle{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;width:40px;height:40px;font-size:1.1rem;cursor:pointer;flex-shrink:0;}
-  .btn{display:inline-block;padding:14px 24px;border-radius:40px;font-weight:700;font-size:.9rem;text-decoration:none;border:1.5px solid var(--ink);}
-  .btn.primary{background:var(--coral-bg);border-color:var(--coral-bg);color:var(--coral-ink);}
-  .btn.ghost{background:transparent;color:var(--ink);}
-  .btn.outline{background:transparent;border:1.5px solid var(--ink);color:var(--ink);}
+  .btn{display:inline-block;padding:13px 26px;border-radius:30px;font-weight:600;font-size:.88rem;text-decoration:none;border:1.5px solid var(--ink);white-space:nowrap;}
+  .btn.primary{background:var(--peach);border-color:var(--peach);color:var(--ink);}
+  .btn.outline{background:transparent;color:var(--ink);}
 
-  @media (max-width:700px){
-    .brand{font-size:.92rem;}
+  @media (max-width:760px){
     .navtoggle{display:block;}
     .navlinks{
       position:absolute;top:calc(100% + 10px);right:0;left:0;
-      background:var(--paper);border:1px solid var(--line);border-radius:14px;
+      background:#fff;border:1px solid var(--line);border-radius:14px;
       flex-direction:column;align-items:flex-start;gap:0;padding:8px;
       box-shadow:0 16px 40px rgba(0,0,0,.08);
       display:none;z-index:40;
     }
     .navlinks.open{display:flex;}
     .navlinks a{width:100%;padding:14px 12px;border-radius:8px;}
-    .navlinks a:active{background:var(--panel);}
+    .navlinks .btn{width:100%;text-align:center;margin-top:4px;}
   }
 
   .page-head{padding:50px 0 20px;}
-  .eyebrow{font-weight:700;font-size:.85rem;letter-spacing:.02em;margin-bottom:16px;display:block;}
-  .page-head h1{font-weight:800;font-size:2.2rem;letter-spacing:-.02em;margin:0 0 16px;}
+  .eyebrow{font-weight:600;font-size:.85rem;letter-spacing:.03em;margin-bottom:16px;display:block;color:var(--muted);text-transform:uppercase;}
+  .page-head h1{font-family:'Fraunces',serif;font-weight:500;font-size:2.4rem;letter-spacing:-.01em;margin:0 0 16px;}
   .page-head p{color:var(--muted);font-size:1.05rem;max-width:56ch;margin:0;}
 
   .cards{padding:40px 0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;}
-  .card.featured{border-color:var(--coral-ink);box-shadow:0 10px 30px rgba(138,50,32,.08);}
-  .turnaround{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--coral-ink);margin-bottom:14px;}
-  .featured-note{font-size:.78rem;font-weight:700;color:var(--mint-ink);margin:0 0 4px;}
-  .card h3{font-size:1.15rem;margin:0 0 6px;font-weight:700;}
-  .card .price{font-weight:800;font-size:1.5rem;margin:4px 0 12px;}
-  .card p.desc{color:var(--muted);font-size:.92rem;margin:0 0 20px;flex-grow:1;}
+  .card{background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;}
+  .card.featured{border-color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.06);}
+  .turnaround{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:14px;}
+  .featured-note{font-size:.78rem;font-weight:700;color:var(--ink);margin:0 0 4px;}
+  .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin:0 0 6px;}
+  .card .price{font-family:'Fraunces',serif;font-weight:500;font-size:1.7rem;margin:4px 0 14px;}
+  .card p.desc{color:var(--muted);font-size:.92rem;margin:0 0 22px;flex-grow:1;}
   .card-cta .btn{width:100%;text-align:center;}
   .card-cta .upsell{font-size:.82rem;color:var(--muted);margin:12px 0 0;text-align:center;}
   .card-cta .upsell a{font-weight:600;text-decoration:underline;color:var(--ink);}
 
   .discovery{padding:70px 0 90px;}
   .discovery .callout{
-    background:linear-gradient(135deg,#f3e9fb,#fbe9e4);border-radius:20px;padding:46px 40px;text-align:center;
+    background:var(--cream);border-radius:24px;padding:50px 40px;text-align:center;
   }
-  .discovery h2{font-weight:700;font-size:1.6rem;margin:0 0 14px;}
-  .discovery p{color:var(--muted);font-size:1rem;max-width:56ch;margin:0 auto 24px;}
+  .discovery h2{font-family:'Fraunces',serif;font-weight:500;font-size:1.8rem;margin:0 0 14px;}
+  .discovery p{color:var(--muted);font-size:1rem;max-width:56ch;margin:0 auto 26px;}
 
   footer.site-footer{padding:30px 0;border-top:1px solid var(--line);}
   footer.site-footer .wrap{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);}
@@ -89,13 +86,13 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header>
   <nav class="wrap" aria-label="Primary">
-    <a href="index.html" class="brand">sara shipley ux</a>
+    <a href="index.html" class="brand">Sara Shipley</a>
     <button class="navtoggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
     <div class="navlinks" id="navLinks">
       <a href="index.html#work">Work</a>
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
-      <a href="contact.html" class="btn primary nav-cta">Book a call</a>
+      <a href="contact.html" class="btn outline">Book Consultation</a>
     </div>
   </nav>
 </header>
@@ -104,7 +101,7 @@
 
 <section class="page-head">
   <div class="wrap">
-    <span class="eyebrow mono">Services &amp; rates</span>
+    <span class="eyebrow">Services &amp; rates</span>
     <h1>A few ways to work together</h1>
     <p>Most of my work starts as a short, focused review, not a full rebuild. If you'd rather talk it through first, a discovery call is below, and if you already know you want a full site or app built from scratch, that's a conversation too.</p>
   </div>
@@ -147,7 +144,7 @@
 <section class="discovery" id="discovery-call">
   <div class="wrap">
     <div class="callout">
-      <span class="eyebrow mono" style="color:var(--coral-ink);">Not sure yet?</span>
+      <span class="eyebrow" style="margin-bottom:10px;">Not sure yet?</span>
       <h2>Start with a discovery call</h2>
       <p>A focused 30-minute conversation about what's going on with your site or app, before you commit to anything. &pound;50, non-refundable, but fully deducted from your Full UX Audit or Consulting booking if you go ahead afterwards.</p>
       <a href="https://buy.stripe.com/3cIfZga2G2DAdBl6VScfK02" class="btn primary" target="_blank" rel="noopener">Book a discovery call for &pound;50</a>
@@ -155,7 +152,7 @@
   </div>
 </section>
 
-<p class="wrap" style="color:var(--muted);font-size:.92rem;padding-bottom:60px;">Want a full website or app built from scratch, or something that doesn't fit neatly into the above? <a href="contact.html" style="font-weight:600;text-decoration:underline;">Get in touch</a> and we'll figure out the right shape for it.</p>
+<p class="wrap" style="color:var(--muted);font-size:.92rem;padding-bottom:60px;">Want a full website or app built from scratch, or something that doesn't fit neatly into the above? <a href="contact.html" style="font-weight:600;text-decoration:underline;color:var(--ink);">Get in touch</a> and we'll figure out the right shape for it.</p>
 
 </main>
 
@@ -172,14 +169,9 @@
   navToggle.addEventListener('click', function(){
     var isOpen = navLinksEl.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
   navLinksEl.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      navLinksEl.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open menu');
-    });
+    a.addEventListener('click', function(){ navLinksEl.classList.remove('open'); });
   });
 </script>
 
