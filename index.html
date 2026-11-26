@@ -116,6 +116,9 @@
   .t-grid blockquote{margin:0;font-size:1.1rem;line-height:1.55;font-style:italic;color:var(--ink);}
   .t-grid .t-name{margin-top:16px;font-weight:600;font-size:.9rem;font-style:normal;}
   .t-grid .t-role{font-size:.78rem;color:var(--muted);font-style:normal;}
+  .t-grid.single{grid-template-columns:1fr;max-width:700px;margin:0 auto;text-align:center;}
+  .t-grid.single blockquote p{margin:0 0 18px;}
+  .t-grid.single blockquote p:last-child{margin-bottom:0;}
   @media (max-width:760px){
     .t-grid{grid-template-columns:1fr;}
   }
@@ -293,25 +296,21 @@
   </div>
 </section>
 
-<!-- Testimonial pending a real client quote. Uncomment and fill in once Lisa (or another client) replies:
 <section class="testimonials">
   <div class="wrap">
     <h2>What Clients are Saying</h2>
-    <div class="t-grid">
+    <div class="t-grid single">
       <div>
-        <blockquote>&ldquo;[Quote]&rdquo;</blockquote>
-        <div class="t-name">Client name</div>
-        <div class="t-role">Role, Company</div>
-      </div>
-      <div>
-        <blockquote>&ldquo;[Quote]&rdquo;</blockquote>
-        <div class="t-name">Client name</div>
-        <div class="t-role">Role, Company</div>
+        <blockquote>
+          <p>&ldquo;It was a pleasure to work with Sara on our website design. From conception through to launch she made the process easy and accessible. She was professional, knowledgeable and thorough and always approachable if we had any queries. She was patient regarding any changes we wanted to make to the original design, having a very collaborative approach which was responsive to the needs of our organisation.</p>
+          <p>Since the website was launched Sara has remained in contact and has always responded quickly and positively to any further amendments we wanted to incorporate. We are very satisfied with the finished product and confident that ongoing support is available should we need it.&rdquo;</p>
+        </blockquote>
+        <div class="t-name">Lisa</div>
+        <div class="t-role">Operations Manager, Swansea Women's Aid</div>
       </div>
     </div>
   </div>
 </section>
--->
 
 <section class="getintouch">
   <div class="wrap">
